@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Lavender & White Palette */
+    --lavender-50: #FBF9FF;
+    --lavender-100: #F3EEFF;
+    --lavender-200: #E7DDFF;
+    --lavender-300: #D5C2FE;
+    --lavender-400: #B799FC;
+    --lavender-500: #9366F9;
+    --lavender-600: #7C3AED;
+    --lavender-700: #6D28D9;
+    --lavender-800: #5B21B6;
+    --lavender-900: #4C1D95;
+    --lavender-950: #2E1065;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  code, pre, .font-code {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Ambient Lavender & White Background */
+.bg-lavender-mesh {
+  background-color: #FFFFFF;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(243, 238, 255, 0.95) 0px, transparent 55%),
+    radial-gradient(at 100% 0%, rgba(235, 226, 254, 0.85) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(240, 233, 255, 0.9) 0px, transparent 55%),
+    radial-gradient(at 0% 100%, rgba(248, 245, 255, 0.95) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.8) 0px, transparent 60%);
+}
+
+.dark .bg-lavender-mesh {
+  background-color: #0B0813;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.18) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(147, 51, 234, 0.14) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(109, 40, 217, 0.16) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(91, 33, 182, 0.12) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(15, 11, 26, 0.5) 0px, transparent 60%);
+}
+
+/* Glassmorphism Card Style - Crisp Lavender & White */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.dark .glass-panel {
+  background: rgba(18, 13, 31, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Custom subtle scrollbar in lavender */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DDD0F8;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3B2D64;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B799FC;
+}
+
+/* Smooth keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.03); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Printable styles */
+@media print {
+  nav, footer, #toast, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}

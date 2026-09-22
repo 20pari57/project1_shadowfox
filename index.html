@@ -1,0 +1,2306 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arijita Paria - Full-Stack Developer Portfolio</title>
+    <meta name="description" content="Personal portfolio of Arijita Paria, Full-Stack Web Developer and B.Tech CSE student specializing in MERN, AI applications, and IoT systems." />
+    <meta property="og:title" content="Arijita Paria - Full-Stack Developer Portfolio" />
+    <meta property="og:description" content="Personal portfolio of Arijita Paria, Full-Stack Web Developer and B.Tech CSE student specializing in MERN, AI applications, and IoT systems." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body class="bg-lavender-mesh text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300 relative selection:bg-purple-200 selection:text-purple-900 dark:selection:bg-purple-900 dark:selection:text-purple-100">
+    
+    <!-- Navigation Header -->
+    <header class="fixed top-0 inset-x-0 z-40 transition-all duration-200 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-purple-100 dark:border-slate-800/80" id="main-header">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+        
+        <!-- Brand Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-200 to-purple-100 dark:from-purple-900 dark:to-purple-950 flex items-center justify-center font-mono font-bold text-sm text-purple-900 dark:text-purple-200 border border-purple-200 dark:border-slate-700 shadow-sm transition-transform duration-200 group-hover:scale-105">
+            AP
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+              Arijita Paria
+            </span>
+            <span class="text-xs text-purple-600 dark:text-purple-400 font-medium">
+              Full-Stack Developer
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="hidden md:flex items-center gap-1.5 lg:gap-2">
+          <a href="#home" class="nav-link px-3 py-1.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50/60 dark:hover:bg-slate-800/60 transition-colors">Home</a>
+          <a href="#about" class="nav-link px-3 py-1.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50/60 dark:hover:bg-slate-800/60 transition-colors">About</a>
+          <a href="#skills" class="nav-link px-3 py-1.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50/60 dark:hover:bg-slate-800/60 transition-colors">Skills</a>
+          <a href="#projects" class="nav-link px-3 py-1.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50/60 dark:hover:bg-slate-800/60 transition-colors">Projects</a>
+          <a href="#github-activity" class="nav-link px-3 py-1.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50/60 dark:hover:bg-slate-800/60 transition-colors">GitHub Activity</a>
+          <a href="#achievements" class="nav-link px-3 py-1.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50/60 dark:hover:bg-slate-800/60 transition-colors">Achievements</a>
+          <a href="#contact" class="nav-link px-3 py-1.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50/60 dark:hover:bg-slate-800/60 transition-colors">Contact</a>
+        </nav>
+
+        <!-- Action Controls (Theme Toggle & Resume Button) -->
+        <div class="flex items-center gap-2.5">
+          <!-- Theme Toggle Button -->
+          <button 
+            id="theme-toggle" 
+            class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-purple-100/60 dark:hover:bg-slate-800 transition-colors border border-purple-100 dark:border-slate-800"
+            aria-label="Toggle Theme"
+            title="Toggle theme"
+          >
+            <!-- Sun Icon (shown in dark mode) -->
+            <svg id="theme-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4" stroke-width="2"/>
+              <path stroke-width="2" stroke-linecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41m14.14-14.14l-1.41 1.41"/>
+            </svg>
+            <!-- Moon Icon (shown in light mode) -->
+            <svg id="theme-moon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+          </button>
+
+          <!-- Resume Modal Button -->
+          <button 
+            id="btn-open-resume" 
+            class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-950 dark:to-pink-950 text-purple-900 dark:text-purple-200 border border-purple-200 dark:border-purple-800/80 hover:bg-purple-200 dark:hover:bg-purple-900 transition-all duration-200 shadow-sm"
+          >
+            <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>Resume</span>
+          </button>
+
+          <!-- Mobile Menu Hamburger -->
+          <button 
+            id="btn-mobile-menu" 
+            class="md:hidden p-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-purple-50 dark:hover:bg-slate-800 border border-purple-100 dark:border-slate-800"
+            aria-label="Toggle Navigation Menu"
+          >
+            <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Navigation -->
+      <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-5 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-b border-purple-100 dark:border-slate-800">
+        <div class="flex flex-col space-y-2">
+          <a href="#home" class="mobile-nav-link px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-purple-50 dark:hover:bg-slate-800">Home</a>
+          <a href="#about" class="mobile-nav-link px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-purple-50 dark:hover:bg-slate-800">About</a>
+          <a href="#skills" class="mobile-nav-link px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-purple-50 dark:hover:bg-slate-800">Skills</a>
+          <a href="#projects" class="mobile-nav-link px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-purple-50 dark:hover:bg-slate-800">Projects</a>
+          <a href="#github-activity" class="mobile-nav-link px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-purple-50 dark:hover:bg-slate-800">GitHub Activity</a>
+          <a href="#achievements" class="mobile-nav-link px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-purple-50 dark:hover:bg-slate-800">Achievements</a>
+          <a href="#contact" class="mobile-nav-link px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-purple-50 dark:hover:bg-slate-800">Contact</a>
+          <button id="btn-mobile-resume" class="mt-2 w-full py-2.5 rounded-xl text-sm font-semibold bg-purple-100 dark:bg-purple-900/60 text-purple-900 dark:text-purple-100 border border-purple-200 dark:border-purple-800 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>View Curriculum Vitae</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="pt-20">
+      
+      <!-- ========================================================================= -->
+      <!-- HOME SECTION (Paragraph removed completely as strictly requested)         -->
+      <!-- ========================================================================= -->
+      <section id="home" class="relative min-h-[calc(100vh-5rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+        
+        <!-- Decorative Ambient Lavender Glows -->
+        <div class="absolute -top-12 left-1/4 w-80 h-80 rounded-full bg-purple-200/40 dark:bg-purple-900/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-purple-100/50 dark:bg-purple-900/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-1/3 w-80 h-80 rounded-full bg-purple-200/30 dark:bg-purple-950/20 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+          
+          <!-- Left Content: High-Impact Typography & Quick CTAs (NO PARAGRAPH) -->
+          <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+            
+            <!-- Availability Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 dark:bg-purple-950/70 border border-purple-200 dark:border-purple-800/80 shadow-xs">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+              <span class="text-xs font-semibold text-purple-900 dark:text-purple-200 tracking-wide">
+                Open to Full-Stack Opportunities
+              </span>
+            </div>
+
+            <!-- Greeting & Large Name -->
+            <div class="space-y-2">
+              <span class="text-xs sm:text-sm font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                Hello, I am
+              </span>
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                Arijita <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-purple-600 to-purple-800 dark:from-purple-300 dark:via-purple-400 dark:to-purple-200">Paria</span>
+              </h1>
+            </div>
+
+            <!-- Dynamic Animated Subtitle -->
+            <div class="flex items-center text-lg sm:text-2xl font-semibold text-slate-700 dark:text-slate-300 min-h-[2.2rem]">
+              <span id="typewriter-role" class="text-purple-700 dark:text-purple-300 font-bold">Full-Stack Web Developer</span>
+              <span class="w-0.5 h-6 bg-purple-500 ml-1.5 animate-pulse inline-block"></span>
+            </div>
+
+            <!-- Crisp Skill Focus Badges (Lavender & White Theme) -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
+              <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-purple-50 dark:bg-purple-950/60 text-purple-800 dark:text-purple-200 border border-purple-200/90 dark:border-purple-800">
+                MERN Stack
+              </span>
+              <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-purple-50 dark:bg-purple-950/60 text-purple-800 dark:text-purple-200 border border-purple-200/90 dark:border-purple-800">
+                C++ &amp; Data Structures
+              </span>
+              <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-purple-50 dark:bg-purple-950/60 text-purple-800 dark:text-purple-200 border border-purple-200/90 dark:border-purple-800">
+                AI &amp; Computer Vision
+              </span>
+              <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-purple-50 dark:bg-purple-950/60 text-purple-800 dark:text-purple-200 border border-purple-200/90 dark:border-purple-800">
+                IoT Systems
+              </span>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-3">
+              <a 
+                href="#projects" 
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-purple-600 hover:bg-purple-700 text-white shadow-md hover:shadow-lg shadow-purple-500/20 transition-all duration-200 hover:-translate-y-0.5"
+              >
+                <span>Explore Projects</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+
+              <a 
+                href="#contact" 
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-purple-200 dark:border-slate-700 hover:bg-purple-50 dark:hover:bg-slate-700 transition-all duration-200"
+              >
+                <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <span>Get in Touch</span>
+              </a>
+
+              <button 
+                id="btn-hero-resume" 
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800/80 hover:bg-purple-100 dark:hover:bg-purple-900/60 transition-all duration-200"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                <span>View CV</span>
+              </button>
+            </div>
+
+            <!-- Social Links Bar -->
+            <div class="flex items-center gap-3 pt-2">
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Connect:</span>
+              <a 
+                href="https://github.com/pariaarijita" 
+                target="_blank" 
+                rel="noreferrer" 
+                class="p-2.5 rounded-xl bg-purple-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 border border-purple-100 dark:border-slate-700 hover:scale-105 transition-all"
+                title="GitHub Profile"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+              </a>
+              <a 
+                href="https://linkedin.com/in/arijitaparia" 
+                target="_blank" 
+                rel="noreferrer" 
+                class="p-2.5 rounded-xl bg-purple-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 border border-purple-100 dark:border-slate-700 hover:scale-105 transition-all"
+                title="LinkedIn Profile"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </a>
+              <a 
+                href="https://x.com/ArijitaParia" 
+                target="_blank" 
+                rel="noreferrer" 
+                class="p-2.5 rounded-xl bg-purple-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 border border-purple-100 dark:border-slate-700 hover:scale-105 transition-all"
+                title="X (Twitter) Profile"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+              <a 
+                href="mailto:pariaarijita52@gmail.com" 
+                class="p-2.5 rounded-xl bg-purple-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 border border-purple-100 dark:border-slate-700 hover:scale-105 transition-all"
+                title="Send Email"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Visual Portrait with Animated Pastel Halos & Micro-Badges -->
+          <div class="lg:col-span-5 flex justify-center items-center relative">
+            
+            <!-- Layered Pastel Halo Rings -->
+            <div class="relative w-72 h-72 sm:w-88 sm:h-88 flex items-center justify-center">
+              
+              <!-- Outer Pastel Spin Ring -->
+              <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-300 via-purple-200 to-purple-400 dark:from-purple-800 dark:via-purple-700 dark:to-purple-900 opacity-70 blur-md animate-pulse-slow"></div>
+              
+              <!-- Middle Soft Container -->
+              <div class="absolute inset-2 rounded-full bg-white dark:bg-slate-900 border-4 border-white dark:border-slate-800 shadow-2xl overflow-hidden flex items-center justify-center">
+                <img 
+                  src="/avatar.jpg" 
+                  alt="Arijita Paria - Developer Portrait" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80'"
+                />
+              </div>
+
+              <!-- Floating Micro-Badge: Hackathons Won -->
+              <div class="absolute -top-2 -left-4 sm:left-0 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-purple-200 dark:border-purple-800 px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-2 animate-float">
+                <span class="w-6 h-6 rounded-lg bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-xs">🏆</span>
+                <div>
+                  <p class="text-xs font-bold text-slate-900 dark:text-white leading-none">4+ Hackathons</p>
+                  <p class="text-[10px] text-purple-600 dark:text-purple-400 font-medium">Winner / MLH</p>
+                </div>
+              </div>
+
+              <!-- Floating Micro-Badge: CGPA -->
+              <div class="absolute -bottom-2 -right-4 sm:right-0 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-purple-200 dark:border-purple-800 px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-2 animate-float" style="animation-delay: 1.5s;">
+                <span class="w-6 h-6 rounded-lg bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-xs">⚡</span>
+                <div>
+                  <p class="text-xs font-bold text-slate-900 dark:text-white leading-none">8.53 CGPA</p>
+                  <p class="text-[10px] text-purple-600 dark:text-purple-400 font-medium">Narula Inst of Tech</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- ABOUT SECTION & EDUCATION TIMELINE                                        -->
+      <!-- ========================================================================= -->
+      <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+            Background &amp; Profile
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Academic Foundation &amp; Philosophy
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Combining rigorous computer science coursework at Narula Institute of Technology with real-world hackathons, patent-pending IoT inventions, and modern web application development.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Education History (Left 6 cols) -->
+          <div class="lg:col-span-6 space-y-4">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+              <span>Formal Education</span>
+            </h3>
+
+            <!-- Card 1: NIT -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-800 transition-all">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 mb-2">
+                    2024 &ndash; 2028
+                  </span>
+                  <h4 class="text-base font-bold text-slate-900 dark:text-white">
+                    Narula Institute of Technology
+                  </h4>
+                  <p class="text-xs sm:text-sm text-purple-700 dark:text-purple-400 font-medium">
+                    B.Tech in Computer Science &amp; Engineering (CSE)
+                  </p>
+                </div>
+                <div class="text-right">
+                  <span class="inline-block px-2 py-1 rounded-lg text-xs font-bold bg-purple-50 dark:bg-purple-900/40 text-purple-900 dark:text-purple-200 border border-purple-200 dark:border-purple-800">
+                    CGPA 8.53
+                  </span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-3 flex items-center gap-1">
+                <span>📍 Kolkata, West Bengal • Current Semester: 4th</span>
+              </p>
+            </div>
+
+            <!-- Card 2: High School -->
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-800 transition-all">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 mb-2">
+                    2016 &ndash; 2023
+                  </span>
+                  <h4 class="text-base font-bold text-slate-900 dark:text-white">
+                    GaneswerPur D.H. High School
+                  </h4>
+                  <p class="text-xs sm:text-sm text-purple-700 dark:text-purple-400 font-medium">
+                    Higher Secondary &amp; Secondary Education
+                  </p>
+                </div>
+                <div class="text-right">
+                  <span class="inline-block px-2 py-1 rounded-lg text-xs font-bold bg-purple-50 dark:bg-purple-900/40 text-purple-900 dark:text-purple-200 border border-purple-200 dark:border-purple-800">
+                    Pure Science
+                  </span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-3 flex items-center gap-1">
+                <span>📍 East Medinipur, West Bengal</span>
+              </p>
+            </div>
+
+            <!-- Key Info Matrix -->
+            <div class="grid grid-cols-2 gap-3 pt-2">
+              <div class="p-4 rounded-xl bg-purple-50/70 dark:bg-purple-950/30 border border-purple-100 dark:border-purple-900/60">
+                <span class="text-[11px] font-mono uppercase text-purple-600 dark:text-purple-400">Current Base</span>
+                <p class="text-xs font-bold text-slate-900 dark:text-white mt-0.5">Kolkata, India</p>
+              </div>
+              <div class="p-4 rounded-xl bg-purple-50/70 dark:bg-purple-950/30 border border-purple-100 dark:border-purple-900/60">
+                <span class="text-[11px] font-mono uppercase text-purple-600 dark:text-purple-400">Languages</span>
+                <p class="text-xs font-bold text-slate-900 dark:text-white mt-0.5">English, Bengali, Hindi</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Developer Terminal (Right 6 cols) -->
+          <div class="lg:col-span-6 space-y-4">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span>Developer Environment &amp; Terminal</span>
+            </h3>
+
+            <div class="rounded-2xl bg-slate-950 text-slate-200 border border-slate-800 shadow-xl overflow-hidden font-mono text-xs">
+              <!-- Window Bar -->
+              <div class="flex items-center justify-between px-4 py-3 bg-slate-900 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                  <span class="text-xs text-slate-400 font-sans ml-2">arijita@workspace:~</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-[10px] text-slate-400 hidden sm:inline-flex items-center gap-1.5 bg-slate-800/80 px-2 py-0.5 rounded-md border border-slate-700/60">
+                    <span class="text-slate-400">History:</span>
+                    <kbd class="px-1 py-0.2 rounded bg-slate-900 text-purple-300 font-bold border border-slate-700">↑</kbd>
+                    <kbd class="px-1 py-0.2 rounded bg-slate-900 text-purple-300 font-bold border border-slate-700">↓</kbd>
+                  </span>
+                  <span class="text-[10px] text-slate-400">bash 5.2</span>
+                </div>
+              </div>
+
+              <!-- Terminal Output Area -->
+              <div id="terminal-body" class="p-4 space-y-2 h-72 overflow-y-auto leading-relaxed text-slate-300 scroll-smooth">
+                <p class="text-purple-400">/* Developer Routine &amp; Engineering Values */</p>
+                <p><span class="text-sky-400">const</span> developer = <span class="text-amber-300">{</span></p>
+                <p class="pl-4">name: <span class="text-emerald-300">"Arijita Paria"</span>,</p>
+                <p class="pl-4">role: <span class="text-emerald-300">"Full-Stack Web Developer"</span>,</p>
+                <p class="pl-4">education: <span class="text-emerald-300">"Narula Institute of Technology"</span>,</p>
+                <p class="pl-4">currentCGPA: <span class="text-pink-400">8.53</span>,</p>
+                <p class="pl-4">hackathonWins: <span class="text-pink-400">4</span>,</p>
+                <p class="pl-4">passions: [<span class="text-emerald-300">"Clean MERN Architecture"</span>, <span class="text-emerald-300">"Embedded AI"</span>, <span class="text-emerald-300">"Fast UI/UX"</span>],</p>
+                <p class="pl-4">philosophy: <span class="text-sky-300">() =&gt;</span> <span class="text-amber-300">{</span></p>
+                <p class="pl-8 text-slate-400">// initialize_happiness();</p>
+                <p class="pl-8">code.create();</p>
+                <p class="pl-8">bug.fix();</p>
+                <p class="pl-8">userImpact.maximize();</p>
+                <p class="pl-4"><span class="text-amber-300">}</span></p>
+                <p><span class="text-amber-300">}</span>;</p>
+                <p class="text-emerald-400 pt-2">$ Type <span class="text-purple-300 font-semibold">'help'</span>, <span class="text-purple-300 font-semibold">'skills'</span>, <span class="text-purple-300 font-semibold">'projects'</span>, <span class="text-purple-300 font-semibold">'github'</span>, <span class="text-purple-300 font-semibold">'timeline'</span>, <span class="text-purple-300 font-semibold">'history'</span>, or <span class="text-purple-300 font-semibold">'clear'</span>:</p>
+              </div>
+
+              <!-- Quick Command Chips -->
+              <div class="px-4 py-1.5 bg-slate-900/70 border-t border-slate-800/80 flex items-center gap-1.5 overflow-x-auto text-[11px] text-slate-400">
+                <span class="text-slate-500 text-[10px] font-sans shrink-0">Quick:</span>
+                <button type="button" class="terminal-quick-btn px-2 py-0.5 rounded bg-slate-800/80 hover:bg-purple-900/60 hover:text-purple-300 text-purple-400 border border-slate-700/60 transition-colors shrink-0">help</button>
+                <button type="button" class="terminal-quick-btn px-2 py-0.5 rounded bg-slate-800/80 hover:bg-purple-900/60 hover:text-purple-300 text-purple-400 border border-slate-700/60 transition-colors shrink-0">history</button>
+                <button type="button" class="terminal-quick-btn px-2 py-0.5 rounded bg-slate-800/80 hover:bg-purple-900/60 hover:text-purple-300 text-purple-400 border border-slate-700/60 transition-colors shrink-0">skills</button>
+                <button type="button" class="terminal-quick-btn px-2 py-0.5 rounded bg-slate-800/80 hover:bg-purple-900/60 hover:text-purple-300 text-purple-400 border border-slate-700/60 transition-colors shrink-0">projects</button>
+                <button type="button" class="terminal-quick-btn px-2 py-0.5 rounded bg-slate-800/80 hover:bg-purple-900/60 hover:text-purple-300 text-purple-400 border border-slate-700/60 transition-colors shrink-0">github</button>
+                <button type="button" class="terminal-quick-btn px-2 py-0.5 rounded bg-slate-800/80 hover:bg-purple-900/60 hover:text-purple-300 text-purple-400 border border-slate-700/60 transition-colors shrink-0">timeline</button>
+                <button type="button" class="terminal-quick-btn px-2 py-0.5 rounded bg-slate-800/80 hover:bg-purple-900/60 hover:text-purple-300 text-purple-400 border border-slate-700/60 transition-colors shrink-0">clear</button>
+              </div>
+
+              <!-- Interactive Prompt Input with Live Syntax Highlighting Indicators -->
+              <form id="terminal-form" class="flex items-center px-4 py-2.5 bg-slate-900/90 border-t border-slate-800 gap-2">
+                <span class="text-purple-400 font-bold select-none">$</span>
+                <div class="relative flex-1 flex items-center">
+                  <input 
+                    type="text" 
+                    id="terminal-input" 
+                    placeholder="type a command (use ↑ / ↓ for history)..." 
+                    class="w-full bg-transparent border-none text-slate-100 placeholder-slate-500 focus:outline-none text-xs font-mono"
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                </div>
+                <div class="flex items-center gap-2">
+                  <span id="terminal-syntax-pill" class="hidden sm:inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800/80 text-slate-400 border border-slate-700/80 transition-all">cmd</span>
+                  <button type="submit" class="text-xs text-purple-400 hover:text-purple-200 font-semibold px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-purple-900/50 border border-purple-500/30 hover:border-purple-400 transition-colors">Enter</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SKILLS SECTION                                                            -->
+      <!-- ========================================================================= -->
+      <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+            Technical Arsenal
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Skills &amp; Technologies
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Organized across programming fundamentals, modern web frameworks, data persistence, and hardware-software integration.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+          <button class="skill-filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-purple-600 text-white shadow-sm transition-all" data-filter="all">All Skills</button>
+          <button class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-purple-100 dark:border-slate-800 hover:bg-purple-50 dark:hover:bg-slate-800 transition-all" data-filter="languages">Languages</button>
+          <button class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-purple-100 dark:border-slate-800 hover:bg-purple-50 dark:hover:bg-slate-800 transition-all" data-filter="frontend">Frontend</button>
+          <button class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-purple-100 dark:border-slate-800 hover:bg-purple-50 dark:hover:bg-slate-800 transition-all" data-filter="backend">Backend &amp; DB</button>
+          <button class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-purple-100 dark:border-slate-800 hover:bg-purple-50 dark:hover:bg-slate-800 transition-all" data-filter="tools">Tools &amp; IoT</button>
+        </div>
+
+        <!-- 4 Lavender & White Themed Skill Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Category 1: Languages -->
+          <div class="skill-group-card p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-900/60 shadow-sm hover:shadow-md transition-all space-y-4" data-category="languages">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-700 dark:text-purple-300 font-bold">
+                &lt;/&gt;
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-slate-900 dark:text-white">Languages</h3>
+                <p class="text-[11px] text-purple-600 dark:text-purple-400">Core Foundations</p>
+              </div>
+            </div>
+            <div class="space-y-2.5 pt-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">C++ (5-Star HackerRank)</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Advanced</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">JavaScript (ES6+)</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Proficient</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">TypeScript</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Intermediate</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">Python</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Intermediate</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">C Language</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Advanced</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Frontend -->
+          <div class="skill-group-card p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-900/60 shadow-sm hover:shadow-md transition-all space-y-4" data-category="frontend">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-700 dark:text-purple-300 font-bold">
+                🎨
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-slate-900 dark:text-white">Frontend</h3>
+                <p class="text-[11px] text-purple-600 dark:text-purple-400">UI &amp; Responsive Web</p>
+              </div>
+            </div>
+            <div class="space-y-2.5 pt-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">React.js</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Proficient</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">Tailwind CSS</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Advanced</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">HTML5 &amp; Semantic Web</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Expert</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">CSS3 &amp; Animations</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Advanced</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">Bootstrap</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Proficient</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Backend & DB -->
+          <div class="skill-group-card p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-900/60 shadow-sm hover:shadow-md transition-all space-y-4" data-category="backend">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-700 dark:text-purple-300 font-bold">
+                ⚡
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-slate-900 dark:text-white">Backend &amp; DB</h3>
+                <p class="text-[11px] text-purple-600 dark:text-purple-400">Services &amp; Storage</p>
+              </div>
+            </div>
+            <div class="space-y-2.5 pt-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">Node.js</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Proficient</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">Express.js</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Proficient</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">MongoDB &amp; Mongoose</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Proficient</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">PostgreSQL</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Intermediate</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">JWT &amp; REST APIs</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Advanced</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Tools & Hardware -->
+          <div class="skill-group-card p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-900/60 shadow-sm hover:shadow-md transition-all space-y-4" data-category="tools">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-700 dark:text-purple-300 font-bold">
+                🛠️
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-slate-900 dark:text-white">Tools &amp; IoT</h3>
+                <p class="text-[11px] text-purple-600 dark:text-purple-400">Workflow &amp; Embedded</p>
+              </div>
+            </div>
+            <div class="space-y-2.5 pt-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">Git &amp; GitHub</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Advanced</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">VS Code &amp; Linux</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Proficient</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">ESP32-CAM &amp; Microcontrollers</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Patent-Level</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">OpenCV &amp; Vision</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Intermediate</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-800 dark:text-slate-200">Jupyter &amp; Postman</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">Proficient</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- PROJECTS SECTION                                                          -->
+      <!-- ========================================================================= -->
+      <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+            Selected Works
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Featured Projects
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Engineered with modern full-stack practices, deep learning models, and real-time IoT hardware telemetry.
+          </p>
+        </div>
+
+        <!-- Projects View Switcher & Timeline Filters -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-purple-100 dark:border-slate-800/80">
+          <!-- View Switcher -->
+          <div class="inline-flex p-1 rounded-2xl bg-purple-100/80 dark:bg-slate-900 border border-purple-200/80 dark:border-purple-900/60" role="tablist" aria-label="Project Views">
+            <button 
+              id="btn-view-grid" 
+              class="project-view-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-purple-600 text-white shadow-sm" 
+              data-view="grid"
+              aria-selected="true"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+              </svg>
+              <span>Featured Cards</span>
+            </button>
+            <button 
+              id="btn-view-timeline" 
+              class="project-view-btn px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-purple-700 dark:hover:text-purple-300" 
+              data-view="timeline"
+              aria-selected="false"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>Chronological Timeline</span>
+              <span class="px-1.5 py-0.5 rounded-full text-[10px] font-mono bg-purple-200 dark:bg-purple-950 text-purple-800 dark:text-purple-200">v-path</span>
+            </button>
+          </div>
+
+          <!-- Timeline Project Filter (visible in timeline view) -->
+          <div id="timeline-project-filters" class="hidden flex flex-wrap items-center gap-1.5">
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 mr-1.5">Filter Milestone:</span>
+            <button class="timeline-filter-btn active px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-600 text-white shadow-xs transition-all" data-project="all">All (12)</button>
+            <button class="timeline-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-purple-100 dark:border-slate-800 hover:bg-purple-50 dark:hover:bg-slate-800 transition-all" data-project="eloria">Eloria (4)</button>
+            <button class="timeline-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-purple-100 dark:border-slate-800 hover:bg-purple-50 dark:hover:bg-slate-800 transition-all" data-project="flora">Flora.AI (4)</button>
+            <button class="timeline-filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-purple-100 dark:border-slate-800 hover:bg-purple-50 dark:hover:bg-slate-800 transition-all" data-project="smart-sep">Smart-Sep (4)</button>
+          </div>
+        </div>
+
+        <!-- 1. Grid Cards View -->
+        <div id="projects-grid-view" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1: Eloria -->
+          <div class="project-card rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
+            <div class="h-48 bg-gradient-to-br from-purple-100 via-purple-50 to-white dark:from-purple-950/60 dark:via-slate-900 dark:to-slate-950 p-6 flex flex-col justify-between relative overflow-hidden border-b border-purple-100 dark:border-slate-800">
+              <span class="inline-block self-start px-2.5 py-1 rounded-lg text-[11px] font-bold bg-white/90 dark:bg-slate-800/90 text-purple-800 dark:text-purple-300 shadow-xs">
+                MERN Stack
+              </span>
+              <div>
+                <h3 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  Eloria
+                </h3>
+                <p class="text-xs font-semibold text-purple-700 dark:text-purple-300 mt-0.5">
+                  Spa &amp; Wellness Management Platform
+                </p>
+              </div>
+            </div>
+
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Full-stack appointment and service management system featuring JWT role-based authentication, therapist scheduling, custom admin controls, and email confirmations.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">React</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Tailwind CSS</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Node.js</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">MongoDB</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">JWT</span>
+              </div>
+
+              <div class="pt-4 border-t border-purple-50 dark:border-slate-800/80 flex items-center justify-between">
+                <button 
+                  class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1"
+                  data-project="eloria"
+                >
+                  <span>View Case Study</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </button>
+                <div class="flex items-center gap-2">
+                  <a href="https://github.com/pariaarijita" target="_blank" class="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white" title="Code Repository">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Flora.AI -->
+          <div class="project-card rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
+            <div class="h-48 bg-gradient-to-br from-purple-100 via-purple-50 to-white dark:from-purple-950/60 dark:via-slate-900 dark:to-slate-950 p-6 flex flex-col justify-between relative overflow-hidden border-b border-purple-100 dark:border-slate-800">
+              <span class="inline-block self-start px-2.5 py-1 rounded-lg text-[11px] font-bold bg-white/90 dark:bg-slate-800/90 text-purple-800 dark:text-purple-300 shadow-xs">
+                Deep Learning &amp; Web
+              </span>
+              <div>
+                <h3 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  Flora.AI
+                </h3>
+                <p class="text-xs font-semibold text-purple-700 dark:text-purple-300 mt-0.5">
+                  Intelligent Plant Pathology System
+                </p>
+              </div>
+            </div>
+
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Computer vision web platform predicting crop diseases from leaf scans in milliseconds with treatment regimens, historical recovery charts, and WebSocket diagnostic streams.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">TypeScript</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">React</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">OpenCV</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">PostgreSQL</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Socket.io</span>
+              </div>
+
+              <div class="pt-4 border-t border-purple-50 dark:border-slate-800/80 flex items-center justify-between">
+                <button 
+                  class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1"
+                  data-project="flora"
+                >
+                  <span>View Case Study</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </button>
+                <div class="flex items-center gap-2">
+                  <a href="https://github.com/pariaarijita" target="_blank" class="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white" title="Code Repository">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Smart-Sep -->
+          <div class="project-card rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
+            <div class="h-48 bg-gradient-to-br from-purple-100 via-purple-50 to-white dark:from-purple-950/60 dark:via-slate-900 dark:to-slate-950 p-6 flex flex-col justify-between relative overflow-hidden border-b border-purple-100 dark:border-slate-800">
+              <span class="inline-block self-start px-2.5 py-1 rounded-lg text-[11px] font-bold bg-white/90 dark:bg-slate-800/90 text-purple-800 dark:text-purple-300 shadow-xs">
+                AI &amp; IoT Hardware
+              </span>
+              <div>
+                <h3 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  Smart-Sep
+                </h3>
+                <p class="text-xs font-semibold text-purple-700 dark:text-purple-300 mt-0.5">
+                  Automated Waste Segregation System
+                </p>
+              </div>
+            </div>
+
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Automated waste sorting mechanism with ESP32-CAM optical recognition, ultrasonic and inductive sensors, 98% accuracy classification, and Leaflet dashboard telemetry.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">ESP32-CAM</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">C++</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">React</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Leaflet</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">IoT</span>
+              </div>
+
+              <div class="pt-4 border-t border-purple-50 dark:border-slate-800/80 flex items-center justify-between">
+                <button 
+                  class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1"
+                  data-project="smart-sep"
+                >
+                  <span>View Case Study</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </button>
+                <div class="flex items-center gap-2">
+                  <a href="https://github.com/pariaarijita" target="_blank" class="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white" title="Code Repository">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 2. Chronological Timeline View (Development Path & Version Evolution) -->
+        <div id="projects-timeline-view" class="hidden space-y-12">
+          
+          <!-- Summary Evolution Tracks -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            
+            <!-- Track 1: Eloria -->
+            <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-purple-900/40 shadow-xs hover:border-purple-300 transition-all space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-purple-700 dark:text-purple-300">Eloria Pipeline</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">v2.0 Stable</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 font-medium">MERN Spa &amp; Wellness Platform</p>
+              <div class="flex items-center text-[11px] font-mono text-slate-500 dark:text-slate-400 gap-1 overflow-x-auto py-1">
+                <span class="px-2 py-0.5 rounded bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v0.5</span>
+                <span>&rarr;</span>
+                <span class="px-2 py-0.5 rounded bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v1.0</span>
+                <span>&rarr;</span>
+                <span class="px-2 py-0.5 rounded bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v1.5</span>
+                <span>&rarr;</span>
+                <span class="px-2 py-0.5 rounded bg-purple-600 text-white font-bold">v2.0</span>
+              </div>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">Architecture &bull; Booking Engine &bull; Operations &bull; Production</p>
+            </div>
+
+            <!-- Track 2: Flora.AI -->
+            <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-purple-900/40 shadow-xs hover:border-purple-300 transition-all space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-purple-700 dark:text-purple-300">Flora.AI Pipeline</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">v2.0 Deployed</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 font-medium">Deep Learning Pathology System</p>
+              <div class="flex items-center text-[11px] font-mono text-slate-500 dark:text-slate-400 gap-1 overflow-x-auto py-1">
+                <span class="px-2 py-0.5 rounded bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v0.2</span>
+                <span>&rarr;</span>
+                <span class="px-2 py-0.5 rounded bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v1.0</span>
+                <span>&rarr;</span>
+                <span class="px-2 py-0.5 rounded bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v1.8</span>
+                <span>&rarr;</span>
+                <span class="px-2 py-0.5 rounded bg-purple-600 text-white font-bold">v2.0</span>
+              </div>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">Dataset Curation &bull; CNN Model &bull; WS Inference &bull; Web Platform</p>
+            </div>
+
+            <!-- Track 3: Smart-Sep -->
+            <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-purple-900/40 shadow-xs hover:border-purple-300 transition-all space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-purple-700 dark:text-purple-300">Smart-Sep Pipeline</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">v2.5 Patent</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 font-medium">AI &amp; IoT Automated Segregator</p>
+              <div class="flex items-center text-[11px] font-mono text-slate-500 dark:text-slate-400 gap-1 overflow-x-auto py-1">
+                <span class="px-2 py-0.5 rounded bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v0.1</span>
+                <span>&rarr;</span>
+                <span class="px-2 py-0.5 rounded bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v1.0</span>
+                <span>&rarr;</span>
+                <span class="px-2 py-0.5 rounded bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v2.0</span>
+                <span>&rarr;</span>
+                <span class="px-2 py-0.5 rounded bg-purple-600 text-white font-bold">v2.5</span>
+              </div>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">Sensor R&amp;D &bull; Edge AI Gates &bull; Leaflet MQTT &bull; Patent Gazetted</p>
+            </div>
+
+          </div>
+
+          <!-- Vertical Timeline Section with Chronological Evolution -->
+          <div class="relative pl-6 sm:pl-10 space-y-8 before:absolute before:inset-y-0 before:left-3 sm:before:left-5 before:w-0.5 before:bg-gradient-to-b before:from-purple-300 before:via-purple-400 before:to-purple-200 dark:before:from-purple-900 dark:before:via-purple-700 dark:before:to-purple-950">
+            
+            <!-- Milestone 1: Smart-Sep v2.5 (Mar 2025) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="smart-sep">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                📜
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Smart-Sep</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v2.5 Release</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">March 2025</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Patent Published</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    Intellectual Property Publication &amp; Multi-Bin Autonomous Telemetry
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Official patent publication achieved for the integrated mechanical sorting apparatus and multi-sensor telemetry system. Documented sub-1.2s segregation speed, inductive eddy-current metallic differentiation, and high-frequency cloud sync.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Patent Gazette</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Embedded C++</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Benchmarking</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="smart-sep">
+                    <span>Smart-Sep Specs</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 2: Flora.AI v2.0 (Feb 2025) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="flora">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                🌱
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Flora.AI</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v2.0 Release</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">February 2025</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Production Deployed</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    Full Agronomist Web Platform &amp; Disease Heatmap Analytics
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Integrated end-to-end React and TypeScript UI connecting agriculturalists to instant diagnosis, regional blight outbreak forecasts, recovery timeline trackers, and downloadable pathology PDF reports.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">React</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">TypeScript</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">PostgreSQL</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Tailwind</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="flora">
+                    <span>Flora.AI Specs</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 3: Smart-Sep v2.0 (Jan 2025) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="smart-sep">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                📡
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Smart-Sep</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v2.0 Milestone</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">January 2025</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Field Tested</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    Cloud MQTT Telemetry &amp; Interactive Leaflet Geo-Dashboard
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Connected microcontroller to real-time MQTT message broker. Engineered an interactive Leaflet mapping client providing municipal sanitation routes with volumetric fill sensors, battery alerts, and automated emptying dispatches.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">ESP32</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">MQTT</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Leaflet.js</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Node.js</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="smart-sep">
+                    <span>Case Study</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 4: Eloria v2.0 (Jan 2025) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="eloria">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                ✨
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Eloria</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v2.0 Release</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">January 2025</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Production Ready</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    Automated Transactional Notifications &amp; Sub-200ms Query Optimization
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Integrated Nodemailer pipeline for client booking confirmations and appointment reminders. Optimized MongoDB index strategies and caching middleware to bring average API latencies under 200ms.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">React</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Nodemailer</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">MongoDB Indexing</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Node.js</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="eloria">
+                    <span>Eloria Specs</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 5: Flora.AI v1.8 (Dec 2024) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="flora">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                ⚡
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Flora.AI</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v1.8 Milestone</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">December 2024</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Low-Latency API</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    Sub-150ms Diagnostic Pipeline &amp; WebSocket Inference Streams
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Designed asynchronous processing queues and WebSocket channels to stream batch leaf image diagnostics with live bounding box coordinates and confidence percentages directly to browser sessions.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Socket.io</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">OpenCV</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Python API</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="flora">
+                    <span>Case Study</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 6: Eloria v1.5 (Nov 2024) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="eloria">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                📊
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Eloria</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v1.5 Milestone</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">November 2024</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Admin Control</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    Administrative Operations Center &amp; Revenue Analytics
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Engineered operational portal enabling wellness center managers to reassign therapists, adjust appointment duration rules, view monthly service revenue graphs, and inspect customer cancellation logs.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">React State</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">JWT RBAC</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Analytics</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="eloria">
+                    <span>Case Study</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 7: Flora.AI v1.0 (Oct 2024) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="flora">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                🧠
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Flora.AI</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v1.0 Core</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">October 2024</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Model Trained</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    Deep Convolutional Neural Network (93%+ Accuracy)
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Completed training iterations on a custom multi-class CNN architecture across 12,000+ agricultural leaf photographs, differentiating healthy foliage from bacterial blight, powdery mildew, and rust with >93% validation precision.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">TensorFlow</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">CNN</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Python</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="flora">
+                    <span>Case Study</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 8: Eloria v1.0 (Sep 2024) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="eloria">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                🗓️
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Eloria</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v1.0 Core</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">September 2024</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Booking Engine</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    Collision-Free Multi-Duration Appointment Scheduler
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Designed appointment allocation algorithms preventing booking collisions across overlapping treatment durations, individual therapist shifts, and designated wellness rooms in real time.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Node.js</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Express</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">MongoDB</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="eloria">
+                    <span>Case Study</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 9: Smart-Sep v1.0 (Aug 2024) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="smart-sep">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                ⚙️
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Smart-Sep</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v1.0 Core</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">August 2024</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Edge Hardware</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    ESP32-CAM Optical Edge AI &amp; High-Speed Servo Diversion Gate
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Embedded lightweight machine vision directly onto an ESP32-CAM microcontroller. Integrated twin servo gates executing 90-degree angular rotations within 1.2 seconds to divert waste categories into designated bins.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">ESP32-CAM</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">C++</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Servo Drivers</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="smart-sep">
+                    <span>Case Study</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 10: Eloria v0.5 (Jun 2024) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="eloria">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                📐
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Eloria</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v0.5 Foundation</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">June 2024</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Architecture</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    Database Schema Normalization &amp; JWT Security Architecture
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Authored the initial MERN architecture, establishing normalized MongoDB document schemas for services, therapists, and client appointments with encrypted passwords and HTTP-only JWT authentication cookies.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">MongoDB</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">JWT</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Express REST</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="eloria">
+                    <span>Case Study</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 11: Flora.AI v0.2 (May 2024) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="flora">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                🔬
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Flora.AI</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v0.2 R&amp;D</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">May 2024</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Dataset Curation</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    Agricultural Dataset Normalization &amp; OpenCV Contour Masking
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Constructed a sanitized dataset of 12,000+ crop leaves. Developed OpenCV preprocessing pipelines including adaptive histogram equalization, soil background subtraction, and foliar lesion boundary isolation.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">OpenCV</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Python</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">NumPy</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="flora">
+                    <span>Case Study</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 12: Smart-Sep v0.1 (Feb 2024) -->
+            <div class="timeline-milestone-item relative space-y-3" data-project="smart-sep">
+              <div class="absolute -left-[30px] sm:-left-[38px] top-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-slate-900 border-2 border-purple-500 dark:border-purple-400 flex items-center justify-center text-xs text-purple-700 dark:text-purple-300 shadow-xs">
+                💡
+              </div>
+              <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200">Smart-Sep</span>
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300">v0.1 Prototype</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">February 2024</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Concept Proved</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-900 dark:text-white">
+                    Sensor Fusion Feasibility: Ultrasonic &amp; Inductive Metal Detection
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                    Built the initial proof-of-concept breadboard circuit fusing inductive proximity coils with ultrasonic distance ranging to validate non-contact sorting of discarded beverage cans and volumetric refuse density.
+                  </p>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-purple-50 dark:border-slate-800/80">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Inductive Sensor</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">Ultrasonic</span>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300">C++</span>
+                  </div>
+                  <button class="btn-open-project-modal text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1" data-project="smart-sep">
+                    <span>Case Study</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- GITHUB ACTIVITY SECTION                                                   -->
+      <!-- ========================================================================= -->
+      <section id="github-activity" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+            Open Source &amp; Code Telemetry
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            GitHub Activity
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            A comprehensive overview of open-source repositories, community stargazers, code velocity, and programming language distributions.
+          </p>
+        </div>
+
+        <!-- GitHub Profile & Action Banner (Clean Lavender Themed) -->
+        <div class="mb-8 p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-purple-50 via-white to-purple-50/60 dark:from-slate-900 dark:via-purple-950/20 dark:to-slate-900 border border-purple-200/80 dark:border-slate-800 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <div class="relative">
+              <div class="w-14 h-14 rounded-2xl bg-purple-100 dark:bg-purple-900/60 border-2 border-purple-300 dark:border-purple-700 flex items-center justify-center text-2xl shadow-xs overflow-hidden">
+                <svg class="w-8 h-8 text-purple-800 dark:text-purple-200" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+              </div>
+              <span class="absolute -bottom-1 -right-1 flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white dark:border-slate-900"></span>
+              </span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Arijita Paria</h3>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">@pariaarijita</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+                Full-Stack Developer • B.Tech CSE (8.53 CGPA) • Open Source Contributor
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
+            <a 
+              href="https://github.com/pariaarijita" 
+              target="_blank" 
+              rel="noreferrer" 
+              class="px-4 py-2.5 rounded-xl text-xs font-semibold bg-purple-600 hover:bg-purple-700 text-white shadow-sm transition-all flex items-center gap-2"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span>View Profile on GitHub</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <button 
+              id="btn-copy-github" 
+              class="px-3.5 py-2.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-purple-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-purple-50 dark:hover:bg-slate-800 transition-all flex items-center gap-1.5 shadow-2xs"
+              title="Copy GitHub Profile URL"
+            >
+              <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              <span>Copy URL</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Primary Lavender Metric Cards (Repositories, Stars, Velocity) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          
+          <!-- Card 1: Total Repositories -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200/80 dark:border-slate-800 shadow-sm hover:border-purple-400 dark:hover:border-purple-700 transition-all flex flex-col justify-between space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-700 dark:text-purple-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+                </svg>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+                Codebases
+              </span>
+            </div>
+            <div>
+              <div class="flex items-baseline gap-2">
+                <span id="github-stat-repos" class="text-4xl font-black text-slate-900 dark:text-white tracking-tight">28+</span>
+                <span class="text-xs font-bold text-purple-600 dark:text-purple-400">Repositories</span>
+              </div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white mt-1">Total Repositories</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                Spanning MERN platforms, deep learning computer vision pipelines, C++ IoT microcontrollers, and algorithmic challenges.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-purple-50 dark:border-slate-800 flex items-center justify-between text-[11px] font-medium text-slate-500 dark:text-slate-400">
+              <span>22 Public Projects</span>
+              <span class="text-purple-600 dark:text-purple-400 font-semibold">6 Libraries &amp; Forks</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Stars -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200/80 dark:border-slate-800 shadow-sm hover:border-purple-400 dark:hover:border-purple-700 transition-all flex flex-col justify-between space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-700 dark:text-purple-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+                Community
+              </span>
+            </div>
+            <div>
+              <div class="flex items-baseline gap-2">
+                <span id="github-stat-stars" class="text-4xl font-black text-slate-900 dark:text-white tracking-tight">48+</span>
+                <span class="text-xs font-bold text-purple-600 dark:text-purple-400">Stars</span>
+              </div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white mt-1">Total Stargazers</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                Community endorsements across the published Smart-Sep apparatus, Flora.AI diagnostic suite, and open-source UI toolkits.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-purple-50 dark:border-slate-800 flex items-center justify-between text-[11px] font-medium text-slate-500 dark:text-slate-400">
+              <span>15+ Active Watchers</span>
+              <span class="text-purple-600 dark:text-purple-400 font-semibold">16 Forks</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Code Contributions & Commit Velocity -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200/80 dark:border-slate-800 shadow-sm hover:border-purple-400 dark:hover:border-purple-700 transition-all flex flex-col justify-between space-y-4 sm:col-span-2 lg:col-span-1">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-700 dark:text-purple-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+                Velocity
+              </span>
+            </div>
+            <div>
+              <div class="flex items-baseline gap-2">
+                <span id="github-stat-commits" class="text-4xl font-black text-slate-900 dark:text-white tracking-tight">850+</span>
+                <span class="text-xs font-bold text-purple-600 dark:text-purple-400">Contributions</span>
+              </div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white mt-1">Yearly Commit Rhythm</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                Consistent engineering workflow across hackathon sprints, academic software iterations, and pull-request collaboration.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-purple-50 dark:border-slate-800 flex items-center justify-between text-[11px] font-medium text-slate-500 dark:text-slate-400">
+              <span>Clean Git Hygiene</span>
+              <span class="text-purple-600 dark:text-purple-400 font-semibold">Continuous Integration</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Most Used Programming Languages (Lavender-Themed Card Design) -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200/80 dark:border-slate-800 shadow-sm space-y-6 mb-8">
+          
+          <!-- Card Header -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-purple-100 dark:border-slate-800">
+            <div>
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-700 dark:text-purple-300 font-bold text-sm">
+                  ⚡
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                  Most Used Programming Languages
+                </h3>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                Calculated across production lines of code, algorithmic solutions, and full-stack project implementations.
+              </p>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/60 border border-purple-200/80 dark:border-purple-800/80 self-start sm:self-auto">
+              <span class="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
+              <span class="text-[11px] font-mono font-semibold text-purple-900 dark:text-purple-200">Production Codebase</span>
+            </div>
+          </div>
+
+          <!-- Multi-Segment Proportion Bar (Lavender Palette) -->
+          <div class="space-y-2">
+            <div class="w-full h-4 rounded-full bg-purple-100/60 dark:bg-slate-800 p-0.5 flex overflow-hidden shadow-inner">
+              <div class="h-full rounded-l-full bg-purple-600 transition-all duration-700" style="width: 38%;" title="JavaScript &amp; TypeScript: 38%"></div>
+              <div class="h-full bg-purple-500 transition-all duration-700" style="width: 26%;" title="C++: 26%"></div>
+              <div class="h-full bg-purple-400 transition-all duration-700" style="width: 18%;" title="Python: 18%"></div>
+              <div class="h-full bg-purple-300 transition-all duration-700" style="width: 12%;" title="HTML &amp; CSS: 12%"></div>
+              <div class="h-full rounded-r-full bg-purple-200 dark:bg-purple-800 transition-all duration-700" style="width: 6%;" title="C Language: 6%"></div>
+            </div>
+            <div class="flex flex-wrap items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400 pt-1">
+              <span>Primary focus: Full-Stack Web + Embedded Systems</span>
+              <span>100% Type &amp; Syntax Checked</span>
+            </div>
+          </div>
+
+          <!-- Languages Detailed Cards Grid (5 Languages) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+            
+            <!-- Language 1: JavaScript & TypeScript -->
+            <div class="p-4 rounded-2xl bg-purple-50/60 dark:bg-purple-950/30 border border-purple-200/70 dark:border-purple-900/40 hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-2.5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-3.5 h-3.5 rounded-md bg-purple-600 inline-block shadow-2xs"></span>
+                  <span class="text-sm font-bold text-slate-900 dark:text-white">JavaScript &amp; TS</span>
+                </div>
+                <span class="text-xs font-mono font-bold text-purple-700 dark:text-purple-300 bg-white dark:bg-slate-900 px-2 py-0.5 rounded-lg border border-purple-200 dark:border-purple-800">
+                  38%
+                </span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                React, Node.js, Express, Next.js, and client-side web application logic.
+              </p>
+              <div class="w-full bg-purple-200/70 dark:bg-purple-900/40 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-purple-600 h-full rounded-full" style="width: 38%;"></div>
+              </div>
+              <span class="inline-block text-[10px] font-mono text-purple-700 dark:text-purple-400 font-semibold">Eloria • Flora Client • Web UIs</span>
+            </div>
+
+            <!-- Language 2: C++ -->
+            <div class="p-4 rounded-2xl bg-purple-50/60 dark:bg-purple-950/30 border border-purple-200/70 dark:border-purple-900/40 hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-2.5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-3.5 h-3.5 rounded-md bg-purple-500 inline-block shadow-2xs"></span>
+                  <span class="text-sm font-bold text-slate-900 dark:text-white">C++</span>
+                </div>
+                <span class="text-xs font-mono font-bold text-purple-700 dark:text-purple-300 bg-white dark:bg-slate-900 px-2 py-0.5 rounded-lg border border-purple-200 dark:border-purple-800">
+                  26%
+                </span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Data structures, algorithmic competitive problem-solving, ESP32-CAM firmware.
+              </p>
+              <div class="w-full bg-purple-200/70 dark:bg-purple-900/40 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-purple-500 h-full rounded-full" style="width: 26%;"></div>
+              </div>
+              <span class="inline-block text-[10px] font-mono text-purple-700 dark:text-purple-400 font-semibold">Smart-Sep • HackerRank 5-Star • DSA</span>
+            </div>
+
+            <!-- Language 3: Python -->
+            <div class="p-4 rounded-2xl bg-purple-50/60 dark:bg-purple-950/30 border border-purple-200/70 dark:border-purple-900/40 hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-2.5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-3.5 h-3.5 rounded-md bg-purple-400 inline-block shadow-2xs"></span>
+                  <span class="text-sm font-bold text-slate-900 dark:text-white">Python</span>
+                </div>
+                <span class="text-xs font-mono font-bold text-purple-700 dark:text-purple-300 bg-white dark:bg-slate-900 px-2 py-0.5 rounded-lg border border-purple-200 dark:border-purple-800">
+                  18%
+                </span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Computer vision with OpenCV, CNN foliar classification models, ML scripts.
+              </p>
+              <div class="w-full bg-purple-200/70 dark:bg-purple-900/40 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-purple-400 h-full rounded-full" style="width: 18%;"></div>
+              </div>
+              <span class="inline-block text-[10px] font-mono text-purple-700 dark:text-purple-400 font-semibold">Flora.AI • OpenCV • Model Pipeline</span>
+            </div>
+
+            <!-- Language 4: HTML & CSS / Tailwind -->
+            <div class="p-4 rounded-2xl bg-purple-50/60 dark:bg-purple-950/30 border border-purple-200/70 dark:border-purple-900/40 hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-2.5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-3.5 h-3.5 rounded-md bg-purple-300 inline-block shadow-2xs"></span>
+                  <span class="text-sm font-bold text-slate-900 dark:text-white">HTML5 &amp; CSS3</span>
+                </div>
+                <span class="text-xs font-mono font-bold text-purple-700 dark:text-purple-300 bg-white dark:bg-slate-900 px-2 py-0.5 rounded-lg border border-purple-200 dark:border-purple-800">
+                  12%
+                </span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Tailwind CSS utilities, semantic structure, responsive layouts, micro-animations.
+              </p>
+              <div class="w-full bg-purple-200/70 dark:bg-purple-900/40 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-purple-300 h-full rounded-full" style="width: 12%;"></div>
+              </div>
+              <span class="inline-block text-[10px] font-mono text-purple-700 dark:text-purple-400 font-semibold">Tailwind • UI Components • Flex/Grid</span>
+            </div>
+
+            <!-- Language 5: C Language -->
+            <div class="p-4 rounded-2xl bg-purple-50/60 dark:bg-purple-950/30 border border-purple-200/70 dark:border-purple-900/40 hover:border-purple-300 dark:hover:border-purple-700 transition-all space-y-2.5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-3.5 h-3.5 rounded-md bg-purple-200 dark:bg-purple-800 inline-block shadow-2xs"></span>
+                  <span class="text-sm font-bold text-slate-900 dark:text-white">C Language</span>
+                </div>
+                <span class="text-xs font-mono font-bold text-purple-700 dark:text-purple-300 bg-white dark:bg-slate-900 px-2 py-0.5 rounded-lg border border-purple-200 dark:border-purple-800">
+                  6%
+                </span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Low-level systems programming, pointers, memory allocation, microcontrollers.
+              </p>
+              <div class="w-full bg-purple-200/70 dark:bg-purple-900/40 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-purple-200 dark:bg-purple-800 h-full rounded-full" style="width: 6%;"></div>
+              </div>
+              <span class="inline-block text-[10px] font-mono text-purple-700 dark:text-purple-400 font-semibold">NIT Coursework • Embedded Drivers</span>
+            </div>
+
+            <!-- Code Quality Guarantee Card -->
+            <div class="p-4 rounded-2xl bg-gradient-to-br from-purple-100/70 to-purple-50/40 dark:from-purple-950/50 dark:to-slate-900 border border-purple-200/80 dark:border-purple-800/80 flex flex-col justify-between space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="text-base">✨</span>
+                <span class="text-sm font-bold text-purple-950 dark:text-purple-200">Engineering Standards</span>
+              </div>
+              <p class="text-xs text-purple-900/80 dark:text-purple-300/80 leading-relaxed">
+                Semantic commits, modular component encapsulation, lint-enforced conventions, and automated build verification.
+              </p>
+              <div class="flex items-center gap-2 text-[10px] font-mono text-purple-700 dark:text-purple-400 font-semibold">
+                <span>✓ Zero Warning Builds</span>
+                <span>•</span>
+                <span>✓ RESTful Standards</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Highlighted Repositories Showcase (Lavender Cards) -->
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+              <span>Highlighted Open-Source Repositories</span>
+            </h3>
+            <a 
+              href="https://github.com/pariaarijita?tab=repositories" 
+              target="_blank" 
+              rel="noreferrer" 
+              class="text-xs font-semibold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1"
+            >
+              <span>View All Repositories</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Repo 1: Smart-Sep-IoT -->
+            <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all flex flex-col justify-between space-y-4 group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <a href="https://github.com/pariaarijita" target="_blank" rel="noreferrer" class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                      Smart-Sep-IoT
+                    </a>
+                  </div>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">Public</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Automated waste segregation apparatus with ESP32-CAM edge vision, inductive sensors, and Leaflet real-time telemetry.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-purple-50 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-purple-500 inline-block"></span>
+                  <span class="font-medium">C++ / React</span>
+                </div>
+                <div class="flex items-center gap-3 font-mono text-[11px]">
+                  <span class="flex items-center gap-1 text-amber-500">★ 24</span>
+                  <span class="flex items-center gap-1 text-slate-400">⑂ 8</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Repo 2: Flora-AI-Pathology -->
+            <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all flex flex-col justify-between space-y-4 group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <a href="https://github.com/pariaarijita" target="_blank" rel="noreferrer" class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                      Flora-AI-Pathology
+                    </a>
+                  </div>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">Public</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Deep learning crop pathology web system predicting 15+ foliar diseases with OpenCV pre-processing and live WebSocket streaming.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-purple-50 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-purple-400 inline-block"></span>
+                  <span class="font-medium">Python / TS</span>
+                </div>
+                <div class="flex items-center gap-3 font-mono text-[11px]">
+                  <span class="flex items-center gap-1 text-amber-500">★ 14</span>
+                  <span class="flex items-center gap-1 text-slate-400">⑂ 5</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Repo 3: Eloria-MERN-Booking -->
+            <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm hover:border-purple-300 dark:hover:border-purple-700 transition-all flex flex-col justify-between space-y-4 group">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <a href="https://github.com/pariaarijita" target="_blank" rel="noreferrer" class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                      Eloria-MERN-Booking
+                    </a>
+                  </div>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">Public</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Full-stack spa booking engine with zero-collision slot reservation logic, dual JWT customer/admin portals, and email dispatch.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-purple-50 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-purple-600 inline-block"></span>
+                  <span class="font-medium">React / Node.js</span>
+                </div>
+                <div class="flex items-center gap-3 font-mono text-[11px]">
+                  <span class="flex items-center gap-1 text-amber-500">★ 10</span>
+                  <span class="flex items-center gap-1 text-slate-400">⑂ 3</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- ACHIEVEMENTS SECTION                                                      -->
+      <!-- ========================================================================= -->
+      <section id="achievements" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+            Honors &amp; Recognition
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Key Achievements
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Validated by global hackathons, competitive problem-solving platforms, and formal research filings.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Achievement 1 -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-slate-800 shadow-sm hover:border-purple-400 transition-all flex flex-col justify-between space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-xl">
+              🏆
+            </div>
+            <div>
+              <span class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400">Competitive Hacking</span>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">
+                4+ Hackathon Winner
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                Major League Hacking (MLH) participant and winner across collegiate and national technology hackathons.
+              </p>
+            </div>
+            <span class="text-[11px] font-semibold text-purple-700 dark:text-purple-300">National Recognition</span>
+          </div>
+
+          <!-- Achievement 2 -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-slate-800 shadow-sm hover:border-purple-400 transition-all flex flex-col justify-between space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-xl">
+              📜
+            </div>
+            <div>
+              <span class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400">Intellectual Property</span>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">
+                1+ Patent Published
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                Official patent publication covering embedded IoT architecture and automated sensor telemetry mechanisms.
+              </p>
+            </div>
+            <span class="text-[11px] font-semibold text-purple-700 dark:text-purple-300">Published Inventor</span>
+          </div>
+
+          <!-- Achievement 3 -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-slate-800 shadow-sm hover:border-purple-400 transition-all flex flex-col justify-between space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-xl">
+              💡
+            </div>
+            <div>
+              <span class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400">Innovation Competitions</span>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">
+                2+ Ideathons
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                Product ideation, feasibility analysis, and rapid prototype pitch participant across tech symposia.
+              </p>
+            </div>
+            <span class="text-[11px] font-semibold text-purple-700 dark:text-purple-300">Pitch &amp; Feasibility</span>
+          </div>
+
+          <!-- Achievement 4 -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-slate-800 shadow-sm hover:border-purple-400 transition-all flex flex-col justify-between space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-xl">
+              ⭐
+            </div>
+            <div>
+              <span class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400">Competitive Coding</span>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">
+                5-Star HackerRank
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                Earned five-star proficiency ratings solving rigorous algorithmic challenges in C++, C, and Python.
+              </p>
+            </div>
+            <span class="text-[11px] font-semibold text-purple-700 dark:text-purple-300">C++, C, Python</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- CONTACT SECTION                                                           -->
+      <!-- ========================================================================= -->
+      <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+            Let's Collaborate
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Get In Touch
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Whether you have an internship or full-time opening, a hackathon project idea, or a question about my work, my inbox is always open.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Contact Details (Left 5 cols) -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm space-y-6">
+              
+              <!-- Email Card -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-700 dark:text-purple-300 shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-[11px] font-mono uppercase text-slate-500 dark:text-slate-400">Direct Email</span>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">pariaarijita52@gmail.com</p>
+                  <button id="btn-copy-email" class="text-xs text-purple-600 dark:text-purple-400 hover:underline mt-0.5 inline-block font-medium">
+                    Copy Email Address
+                  </button>
+                </div>
+              </div>
+
+              <!-- LinkedIn & Networking Card -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-700 dark:text-purple-300 shrink-0">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-[11px] font-mono uppercase text-slate-500 dark:text-slate-400">Professional Network</span>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">linkedin.com/in/arijitaparia</p>
+                  <a href="https://linkedin.com/in/arijitaparia" target="_blank" rel="noreferrer" class="text-xs text-purple-600 dark:text-purple-400 hover:underline mt-0.5 inline-block font-medium">
+                    Connect on LinkedIn
+                  </a>
+                </div>
+              </div>
+
+              <!-- Location Card -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-700 dark:text-purple-300 shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-[11px] font-mono uppercase text-slate-500 dark:text-slate-400">Location</span>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">Kolkata, West Bengal, India</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Open to Remote &amp; On-Site</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Quick Profile Banner -->
+            <div class="p-6 rounded-3xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/40">
+              <p class="text-xs font-semibold text-purple-900 dark:text-purple-200">
+                Ready to contribute to agile development teams, build MERN applications, or solve complex algorithmic problems.
+              </p>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form (Right 7 cols) -->
+          <div class="lg:col-span-7">
+            <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-slate-800 shadow-sm">
+              <form id="contact-form" class="space-y-4" novalidate>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <!-- Name Input -->
+                  <div>
+                    <label for="form-name" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                      Your Name <span class="text-rose-500">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="form-name" 
+                      name="name" 
+                      placeholder="e.g. Alex Morgan" 
+                      class="w-full px-4 py-2.5 rounded-xl text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      required 
+                    />
+                    <p id="error-name" class="text-[11px] text-rose-500 mt-1 hidden">Please enter your name.</p>
+                  </div>
+
+                  <!-- Email Input -->
+                  <div>
+                    <label for="form-email" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                      Email Address <span class="text-rose-500">*</span>
+                    </label>
+                    <input 
+                      type="email" 
+                      id="form-email" 
+                      name="email" 
+                      placeholder="alex@company.com" 
+                      class="w-full px-4 py-2.5 rounded-xl text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      required 
+                    />
+                    <p id="error-email" class="text-[11px] text-rose-500 mt-1 hidden">Please enter a valid email address.</p>
+                  </div>
+                </div>
+
+                <!-- Subject Input -->
+                <div>
+                  <label for="form-subject" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                    Subject <span class="text-rose-500">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="form-subject" 
+                    name="subject" 
+                    placeholder="Project Inquiry / Job Opportunity" 
+                    class="w-full px-4 py-2.5 rounded-xl text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    required 
+                  />
+                  <p id="error-subject" class="text-[11px] text-rose-500 mt-1 hidden">Please enter a subject.</p>
+                </div>
+
+                <!-- Message Input -->
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <label for="form-message" class="block text-xs font-semibold text-slate-700 dark:text-slate-300">
+                      Message <span class="text-rose-500">*</span>
+                    </label>
+                    <span id="char-count" class="text-[10px] text-slate-400 font-mono">0 / 500</span>
+                  </div>
+                  <textarea 
+                    id="form-message" 
+                    name="message" 
+                    rows="4" 
+                    maxlength="500"
+                    placeholder="Write your message here..." 
+                    class="w-full px-4 py-2.5 rounded-xl text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+                    required
+                  ></textarea>
+                  <p id="error-message" class="text-[11px] text-rose-500 mt-1 hidden">Message must be at least 10 characters.</p>
+                </div>
+
+                <!-- Submit Button -->
+                <button 
+                  type="submit" 
+                  id="btn-submit-contact"
+                  class="w-full py-3 px-6 rounded-xl font-semibold text-xs bg-purple-600 hover:bg-purple-700 text-white shadow-md transition-all flex items-center justify-center gap-2"
+                >
+                  <span>Send Message</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
+                </button>
+
+                <!-- Feedback Banner -->
+                <div id="form-feedback" class="hidden p-3 rounded-xl text-xs font-medium text-center"></div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- FOOTER                                                                    -->
+    <!-- ========================================================================= -->
+    <footer class="relative bg-white dark:bg-slate-950 border-t border-purple-100 dark:border-slate-800/80 pt-16 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <!-- Lavender line on top -->
+      <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-purple-200 via-purple-500 to-purple-200 dark:from-purple-900 dark:via-purple-600 dark:to-purple-900"></div>
+
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-purple-100/60 dark:border-slate-800">
+          
+          <!-- Brand -->
+          <div class="text-center md:text-left space-y-1">
+            <div class="flex items-center justify-center md:justify-start gap-2">
+              <div class="w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-900/60 flex items-center justify-center font-mono font-bold text-xs text-purple-900 dark:text-purple-200 border border-purple-200 dark:border-purple-800">
+                AP
+              </div>
+              <span class="font-extrabold text-lg text-slate-900 dark:text-white">
+                Arijita Paria
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+              Full-Stack Web Developer &amp; B.Tech CSE Student (CGPA: 8.53)
+            </p>
+          </div>
+
+          <!-- Quick Navigation Links -->
+          <div class="flex flex-wrap items-center justify-center gap-6 text-xs font-semibold text-slate-600 dark:text-slate-300">
+            <a href="#home" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Home</a>
+            <a href="#about" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">About</a>
+            <a href="#skills" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Skills</a>
+            <a href="#projects" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Projects</a>
+            <a href="#github-activity" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">GitHub Activity</a>
+            <a href="#achievements" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Achievements</a>
+            <a href="#contact" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Contact</a>
+          </div>
+
+          <!-- Back to Top Button -->
+          <button 
+            id="btn-scroll-top" 
+            class="p-2.5 rounded-xl bg-purple-50 dark:bg-slate-800 text-purple-700 dark:text-purple-300 hover:bg-purple-100 dark:hover:bg-slate-700 border border-purple-200 dark:border-slate-700 transition-all shadow-xs"
+            title="Scroll to Top"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-3">
+          <p>&copy; <span id="current-year">2026</span> Arijita Paria. All rights reserved.</p>
+          <div class="flex items-center gap-1.5 font-medium">
+            <span>Curated in Lavender &amp; Crisp White</span>
+            <span>✨</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ========================================================================= -->
+    <!-- RESUME / CURRICULUM VITAE MODAL                                           -->
+    <!-- ========================================================================= -->
+    <div id="resume-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-slate-900/70 backdrop-blur-sm">
+      <div class="relative w-full max-w-4xl max-h-[92vh] flex flex-col bg-white dark:bg-slate-900 rounded-3xl border border-purple-200 dark:border-slate-700 shadow-2xl overflow-hidden">
+        
+        <!-- Modal Action Bar -->
+        <div class="flex items-center justify-between px-6 py-4 border-b border-purple-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-purple-500 inline-block"></span>
+            <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white">
+              Curriculum Vitae • Arijita Paria
+            </h3>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button 
+              id="btn-copy-resume-text" 
+              class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+            >
+              <span>Copy Text</span>
+            </button>
+
+            <button 
+              id="btn-print-resume" 
+              class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 border border-purple-200 dark:border-purple-800 hover:bg-purple-200 transition-colors"
+            >
+              <span>Print / PDF</span>
+            </button>
+
+            <button 
+              id="btn-close-resume" 
+              class="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Resume Printable Document Body -->
+        <div class="flex-1 overflow-y-auto p-6 sm:p-10 bg-white text-slate-900 font-sans">
+          <!-- Document Header -->
+          <div class="text-center pb-6 border-b border-slate-200">
+            <h1 class="text-3xl font-bold tracking-tight text-slate-950">Arijita Paria</h1>
+            <p class="text-sm font-bold text-purple-700 mt-1">Full-Stack Web Developer</p>
+            <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 mt-2 text-xs text-slate-600">
+              <a href="mailto:pariaarijita52@gmail.com" class="text-purple-700 underline font-medium">pariaarijita52@gmail.com</a>
+              <span>•</span>
+              <a href="https://linkedin.com/in/arijitaparia" target="_blank" class="text-purple-700 underline">LinkedIn</a>
+              <span>•</span>
+              <a href="https://github.com/pariaarijita" target="_blank" class="text-purple-700 underline">GitHub</a>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="mt-5">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-2">Education</h2>
+            <div class="space-y-3">
+              <div class="flex justify-between items-start text-xs">
+                <div>
+                  <p class="font-bold text-slate-900">Narula Institute of Technology</p>
+                  <p class="text-slate-700">B.Tech in Computer Science &amp; Engineering • Current CGPA: 8.53 (4th Sem)</p>
+                </div>
+                <div class="text-right text-slate-500 shrink-0">
+                  <p>Kolkata, WB</p>
+                  <p class="font-mono">2024 &ndash; 2028</p>
+                </div>
+              </div>
+              <div class="flex justify-between items-start text-xs">
+                <div>
+                  <p class="font-bold text-slate-900">GaneswerPur D.H. High School</p>
+                  <p class="text-slate-700">Higher Secondary &amp; Secondary Education</p>
+                </div>
+                <div class="text-right text-slate-500 shrink-0">
+                  <p>East Medinipur, WB</p>
+                  <p class="font-mono">2016 &ndash; 2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projects -->
+          <div class="mt-5">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-2">Projects</h2>
+            <div class="space-y-3">
+              <div class="text-xs">
+                <p class="font-bold text-slate-900">Eloria <span class="font-normal text-purple-700">| React, Tailwind CSS, Node.js, Express, MongoDB, JWT</span></p>
+                <p class="text-slate-700 mt-0.5">MERN stack spa management platform with responsive reservation engine, therapist slot scheduling, and JWT role-based security.</p>
+              </div>
+              <div class="text-xs">
+                <p class="font-bold text-slate-900">Flora.AI <span class="font-normal text-purple-700">| TypeScript, React, Node.js, Express, PostgreSQL, OpenCV, Socket.io</span></p>
+                <p class="text-slate-700 mt-0.5">Deep learning plant health diagnosis platform classifying foliar diseases in milliseconds with treatment guidance and telemetry.</p>
+              </div>
+              <div class="text-xs">
+                <p class="font-bold text-slate-900">Smart-Sep <span class="font-normal text-purple-700">| ESP32-CAM, C++, React, Leaflet, IoT Sensors</span></p>
+                <p class="text-slate-700 mt-0.5">AI and IoT automated waste segregation system with optical recognition and 98% classification accuracy.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Skills -->
+          <div class="mt-5">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-2">Technical Skills</h2>
+            <div class="text-xs space-y-1 text-slate-700">
+              <p><strong class="text-slate-900">Programming Languages:</strong> C++, C, JavaScript (ES6+), Python, TypeScript</p>
+              <p><strong class="text-slate-900">Libraries &amp; Frameworks:</strong> React.js, Node.js, Express.js, Tailwind CSS, Bootstrap</p>
+              <p><strong class="text-slate-900">Databases:</strong> MongoDB, PostgreSQL</p>
+              <p><strong class="text-slate-900">Developer Tools:</strong> Git, GitHub, VS Code, Linux, Jupyter Notebook, Postman</p>
+            </div>
+          </div>
+
+          <!-- Achievements -->
+          <div class="mt-5">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-2">Achievements</h2>
+            <ul class="text-xs space-y-1 text-slate-700 list-disc pl-4">
+              <li>4+ Hackathon Winner (Major League Hacking - MLH Participant)</li>
+              <li>1+ Official Patent Published (IoT &amp; Embedded Systems)</li>
+              <li>2+ Ideathon Participant</li>
+              <li>5-Star Rating in HackerRank (C++, C, Python)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- PROJECT CASE STUDY MODAL                                                  -->
+    <!-- ========================================================================= -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-slate-900/70 backdrop-blur-sm">
+      <div class="relative w-full max-w-2xl max-h-[90vh] flex flex-col bg-white dark:bg-slate-900 rounded-3xl border border-purple-200 dark:border-slate-700 shadow-2xl overflow-hidden">
+        
+        <div class="flex items-center justify-between px-6 py-4 border-b border-purple-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+          <h3 id="modal-project-title" class="font-bold text-base text-slate-900 dark:text-white">Project Case Study</h3>
+          <button id="btn-close-project-modal" class="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <div class="p-6 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+          <div>
+            <span class="text-[11px] font-mono font-semibold uppercase text-purple-600 dark:text-purple-400" id="modal-project-category">Full-Stack Platform</span>
+            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1" id="modal-project-name">Project Name</h4>
+            <p class="mt-2 text-slate-600 dark:text-slate-300 leading-relaxed" id="modal-project-desc">Description</p>
+          </div>
+
+          <div>
+            <h5 class="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider mb-2">Technologies Used</h5>
+            <div class="flex flex-wrap gap-1.5" id="modal-project-tech"></div>
+          </div>
+
+          <div>
+            <h5 class="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider mb-2">Key Engineering Highlights</h5>
+            <ul class="list-disc pl-4 space-y-1.5 text-xs text-slate-600 dark:text-slate-300" id="modal-project-highlights"></ul>
+          </div>
+
+          <div class="pt-4 border-t border-purple-100 dark:border-slate-800 flex items-center justify-end gap-3">
+            <a id="modal-project-github" href="https://github.com/pariaarijita" target="_blank" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-200">
+              GitHub Repo
+            </a>
+            <button id="btn-close-project-modal-bottom" class="px-4 py-2 rounded-xl text-xs font-semibold bg-purple-600 text-white hover:bg-purple-700">
+              Close
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Interactive Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-2xl shadow-xl text-xs font-semibold transition-all duration-300 transform translate-y-10 opacity-0 bg-slate-900 text-white dark:bg-white dark:text-slate-900 flex items-center gap-2.5">
+      <span id="toast-icon">✨</span>
+      <span id="toast-msg">Notification</span>
+    </div>
+
+    <!-- Pure Vanilla TypeScript / JavaScript Controller (NO LIBRARIES) -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
